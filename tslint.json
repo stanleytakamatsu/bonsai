@@ -34,6 +34,7 @@
     "no-unnecessary-class": false,
     "no-empty-interface": false,
     "await-promise": [true, "Bluebird", "PromiseLike"],
-    "no-implicit-dependencies": [true, "dev"]
+    "no-implicit-dependencies": [true, "dev"],
+    "strict-boolean-expressions": false
   }
 }
