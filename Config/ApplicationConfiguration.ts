@@ -4,6 +4,10 @@ import { TLoggingLevels } from '../App/Core/Logger/TLoggingLevel';
 import { IApplicationConfiguration } from './IApplicationConfiguration';
 
 class ApplicationConfiguration implements IApplicationConfiguration {
+  public hashDriver(): string {
+    return process.env.HASH_DRIVER;
+  }
+
   public timezone(): string {
     return process.env.TZ;
   }

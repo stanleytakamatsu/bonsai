@@ -7,7 +7,7 @@ import { IContainerStrategy } from './Strategy/IContainerStrategy';
 class ContainerService implements IContainerService {
   private static readonly RETRY_LIMIT = 3;
 
-  private retryCounter = {};
+  private readonly retryCounter: { [key: string]: number } = {};
 
   public constructor(private readonly container: IContainerStrategy) {}
 
@@ -19,9 +19,11 @@ class ContainerService implements IContainerService {
     try {
       return await this.container.get<T>(serviceIdentifier);
     } catch (e) {
-      this.retryCounter[serviceIdentifier] = (this.retryCounter[serviceIdentifier] || 0) + 1;
+      const serviceIdentifierInString = serviceIdentifier.toString();
+      this.retryCounter[serviceIdentifierInString] =
+        (this.retryCounter[serviceIdentifierInString] || 0) + 1;
 
-      if (this.retryCounter[serviceIdentifier] >= ContainerService.RETRY_LIMIT) {
+      if (this.retryCounter[serviceIdentifierInString] >= ContainerService.RETRY_LIMIT) {
         throw new Error('Cannot find in the registry');
       }
 

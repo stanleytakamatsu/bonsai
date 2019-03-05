@@ -3,6 +3,8 @@ import { AuthorisationServiceProvider } from '../App/Authorisation/Provider/Auth
 import { AuthorisationUseCaseProvider } from '../App/Authorisation/Provider/AuthorisationUseCaseProvider';
 import { IContainerRegistry } from '../App/Core/Container/IContainerRegistry';
 import { IContainerService } from '../App/Core/Container/IContainerService';
+import { CredentialDriverProvider } from '../App/Core/Credential/Provider/CredentialDriverProvider';
+import { CredentialUseCaseProvider } from '../App/Core/Credential/Provider/CredentialUseCaseProvider';
 import { MongooseProvider } from '../App/Core/Database/Driver/Mongoose/Provider/MongooseProvider';
 import { HttpServerProvider } from '../App/Core/HttpServer/Provider/HttpServerProvider';
 import { INewable } from '../App/Core/Interface/INewable';
@@ -20,7 +22,9 @@ class ContainerRegistry implements IContainerRegistry {
     MongooseProvider,
     AuthorisationServiceProvider,
     AuthorisationUseCaseProvider,
-    AuthorisationMiddlewareProvider
+    AuthorisationMiddlewareProvider,
+    CredentialDriverProvider,
+    CredentialUseCaseProvider
   ];
 
   public constructor(private readonly container: IContainerService) {}

@@ -1,6 +1,7 @@
 import { IWinstonConfiguration } from '../App/Core/Logger/Driver/Winston/IWinstonConfiguration';
 
 interface IApplicationConfiguration {
+  hashDriver(): string;
   timezone(): string;
   loggerDriver(): string;
   httpServerConfigurations(): any;
