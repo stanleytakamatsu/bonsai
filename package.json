@@ -33,6 +33,7 @@
     "bluebird": "^3.5.3",
     "cerialize": "^0.1.18",
     "commander": "^2.19.0",
+    "crypto": "^1.0.1",
     "dotenv": "^6.2.0",
     "emittery": "^0.4.1",
     "fastify": "^1.13.2",
