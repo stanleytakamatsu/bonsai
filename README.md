@@ -7,3 +7,14 @@ It also serves as an example to follow the suggested architecture for personal o
 # About Dialogue
 
 Dialogue is a simple communication project that uses _Socket.IO_ and _mongodb_ database.
+
+# Requirement
+
+- docker
+- docker-compose
+
+# Run project
+
+```
+docker-compose up
+```
