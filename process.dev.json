@@ -1,0 +1,15 @@
+{
+  "apps": [
+    {
+      "name": "dialogue-app",
+      "script": "dist/Config/Entrypoint.js",
+      "args": "--server",
+      "exec_mode": "fork",
+      "instance_var": "DIALOGUE",
+      "node_args": ["--inspect=0.0.0.0:9222"],
+      "source_map_support": true,
+      "watch": ["dist"],
+      "extends": "tsconfig.json"
+    }
+  ]
+}

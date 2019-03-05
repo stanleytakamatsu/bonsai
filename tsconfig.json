@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowUnreachableCode": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "lib": ["es6"],
+    "types": ["reflect-metadata", "node"],
+    "rootDir": "./",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "es2018",
+    "allowJs": true,
+    "outDir": "dist/",
+    "typeRoots": ["node_modules/@types"],
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  }
+}

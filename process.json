@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "name": "dialogue-app",
+      "script": "dist/Config/Entrypoint.js",
+      "args": "--server",
+      "instances": 0,
+      "exec_mode": "cluster",
+      "instance_var": "DIALOGUE",
+      "source_map_support": true,
+      "watch": false
+    }
+  ]
+}
