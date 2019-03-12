@@ -13,6 +13,12 @@ abstract class MongooseRepository<T extends Document> {
   ) {
     const schema = new Schema(schemaDefinition);
 
+    schema.virtual('id').get(() => {
+      const self = this as any;
+
+      return self._id;
+    });
+
     this.documentModel = connection.model<T>(collectionName, schema, collectionName);
   }
 }
