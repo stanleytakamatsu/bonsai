@@ -4,16 +4,19 @@ import { INewable } from '../Core/Interface/INewable';
 
 import { HealthRoute } from './HealthRoute';
 import { IRoute } from './IRoute';
+import { AccountRoute } from './v1/AccountRoute';
 
 class RouteRegistry {
-  private static readonly REGISTERED_ROUTES: INewable<IRoute>[] = [HealthRoute];
+  private static readonly REGISTERED_ROUTES: INewable<IRoute>[] = [HealthRoute, AccountRoute];
 
   public constructor(private readonly container: IContainerService) {}
 
   public async registerAll(): Promise<void> {
-    RouteRegistry.REGISTERED_ROUTES.forEach(
-      async newableRoute => this.registerRoute(newableRoute)
-    );
+    const routesCount = RouteRegistry.REGISTERED_ROUTES.length;
+
+    for (let i = 0; i < routesCount; i += 1) {
+      await this.registerRoute(RouteRegistry.REGISTERED_ROUTES[i]);
+    }
   }
 
   public async registerRoute(newableRoute: INewable<IRoute>): Promise<void> {
