@@ -1,6 +1,7 @@
 import * as moment from 'moment-timezone';
 
 import { GuidGenerator } from '../../Core/Hash/Guid/GuidGenerator';
+import { IAccountModel } from '../Repository/Model/IAccountModel';
 
 class Account {
   private id: string;
@@ -48,6 +49,20 @@ class Account {
     account.salt = salt;
     account.createdAt = moment();
     account.updatedAt = moment();
+
+    return account;
+  }
+
+  public static createFromRecord(record: IAccountModel): Account {
+    const account = new Account();
+
+    account.id = record.id;
+    account.guid = record.guid;
+    account.email = record.email;
+    account.password = record.password;
+    account.salt = record.salt;
+    account.createdAt = moment(record.createdAt);
+    account.updatedAt = moment(record.updatedAt);
 
     return account;
   }

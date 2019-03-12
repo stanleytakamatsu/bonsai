@@ -5,10 +5,10 @@ import { SaveRecordError } from '../../../Core/Error/Repository/SaveRecordError'
 import { ICreateAccountCommand } from '../../Tyoe/Command/Repository/ICreateAccountCommand';
 import { IAccountRepository } from '../IAccountRepository';
 
-import { IAccountModel } from './Model/IAccountModel';
+import { IAccountMongooseModel } from './Model/IAccountMongooseModel';
 import { AccountSchema } from './Schema/AccountSchema';
 
-class AccountMongooseRepository extends MongooseRepository<IAccountModel>
+class AccountMongooseRepository extends MongooseRepository<IAccountMongooseModel>
   implements IAccountRepository {
   private static readonly COLLECTION_NAME = 'Account';
 
@@ -18,7 +18,7 @@ class AccountMongooseRepository extends MongooseRepository<IAccountModel>
 
   public async create(command: ICreateAccountCommand): Promise<void> {
     try {
-      const account: Partial<IAccountModel> = {
+      const account: Partial<IAccountMongooseModel> = {
         createdAt: command.Account.CreatedAt.toDate(),
         email: command.Account.Email,
         guid: command.Account.Guid,
