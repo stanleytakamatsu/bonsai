@@ -3,6 +3,7 @@ import { Document, Model, Schema, SchemaDefinition } from 'mongoose';
 import { IMongooseConnection } from '../Connection/IMongooseConnection';
 
 abstract class MongooseRepository<T extends Document> {
+  public static ERROR_CODE_DUPLICATED = '11000';
   protected documentModel: Model<T>;
 
   public constructor(
