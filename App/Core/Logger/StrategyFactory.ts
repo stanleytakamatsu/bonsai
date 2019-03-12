@@ -12,9 +12,9 @@ class StartegyFactory {
     configuration: IApplicationConfiguration,
     tracer: ITracer
   ): Promise<ILogger> {
-    const queue_driver = configuration.loggerDriver();
+    const logger_driver = configuration.loggerDriver();
 
-    switch (queue_driver) {
+    switch (logger_driver) {
       case Drivers.WINSTON:
         return StartegyFactory.createWinstonLogger(configuration, tracer);
       default:
