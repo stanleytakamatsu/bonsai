@@ -10,8 +10,8 @@ class CredentialUseCaseProvider implements IProvider {
   public constructor(private readonly container: IContainerService) {}
 
   public async register(): Promise<void> {
-    await this.registerGenerateUserCredentialFromExistingSalt();
     await this.registerGenerateNewUserCredential();
+    await this.registerGenerateUserCredentialFromExistingSalt();
   }
 
   private async registerGenerateUserCredentialFromExistingSalt(): Promise<void> {
@@ -22,8 +22,8 @@ class CredentialUseCaseProvider implements IProvider {
       resolve(useCase);
     });
 
-    await this.container.register<IGenerateNewUserCredential>(
-      IGenerateNewUserCredential,
+    await this.container.register<IGenerateUserCredentialFromExistingSalt>(
+      IGenerateUserCredentialFromExistingSalt,
       promisedUseCase
     );
   }
