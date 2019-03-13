@@ -1,3 +1,8 @@
+import { AccountControllerProvider } from '../App/Account/Provider/AccountControllerProvider';
+import { AccountRepositoryProvider } from '../App/Account/Provider/AccountRepositoryProvider';
+import { AccountServiceProvider } from '../App/Account/Provider/AccountServiceProvider';
+import { AccountUseCaseProvider } from '../App/Account/Provider/AccountUseCaseProvider';
+import { AccountValidatorProvider } from '../App/Account/Provider/AccountValidatorProvider';
 import { AuthorisationMiddlewareProvider } from '../App/Authorisation/Provider/AuthorisationMiddlewareProvider';
 import { AuthorisationServiceProvider } from '../App/Authorisation/Provider/AuthorisationServiceProvider';
 import { AuthorisationUseCaseProvider } from '../App/Authorisation/Provider/AuthorisationUseCaseProvider';
@@ -24,7 +29,12 @@ class ContainerRegistry implements IContainerRegistry {
     AuthorisationUseCaseProvider,
     AuthorisationMiddlewareProvider,
     CredentialDriverProvider,
-    CredentialUseCaseProvider
+    CredentialUseCaseProvider,
+    AccountValidatorProvider,
+    AccountRepositoryProvider,
+    AccountServiceProvider,
+    AccountUseCaseProvider,
+    AccountControllerProvider
   ];
 
   public constructor(private readonly container: IContainerService) {}
@@ -33,14 +43,14 @@ class ContainerRegistry implements IContainerRegistry {
     const providersCount = ContainerRegistry.REGISTERED_PROVIDERS.length;
 
     for (let i = 0; i < providersCount; i += 1) {
-      void this.registerProvider(ContainerRegistry.REGISTERED_PROVIDERS[i]);
+      await this.registerProvider(ContainerRegistry.REGISTERED_PROVIDERS[i]);
     }
   }
 
   public async registerProvider(newableProvider: INewable<IProvider>): Promise<any> {
     const provider: IProvider = new newableProvider(this.container);
 
-    void provider.register();
+    await provider.register();
   }
 }
 

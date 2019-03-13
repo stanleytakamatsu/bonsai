@@ -1,8 +1,6 @@
-import { Document, Model, Schema } from 'mongoose';
+import { Connection } from 'mongoose';
 
-interface IMongooseConnection {
-  model<T extends Document>(name: string, schema?: Schema, collection?: string): Model<T>;
-}
+interface IMongooseConnection extends Connection {}
 
 const IMongooseConnection = Symbol.for('IMongooseConnection');
 

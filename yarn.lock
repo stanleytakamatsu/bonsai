@@ -120,7 +120,7 @@
     "@types/bson" "*"
     "@types/node" "*"
 
-"@types/mongoose@^5.3.5":
+"@types/mongoose@^5.3.20":
   version "5.3.20"
   resolved "https://registry.yarnpkg.com/@types/mongoose/-/mongoose-5.3.20.tgz#3daf682cc326b685d1df3eca6d40181962a6aeca"
   integrity sha512-KXD/wRaUkxA7NwU+0yp60WEFFmkhzJ4idGawycjUxFMTANIM7ZqlZsoXhHu3p33cg450D8PuwtAorFUwuMXLwA==
@@ -152,9 +152,16 @@
   integrity sha512-47kAAs3yV/hROraCTQYDMh4p/6zI9+gtssjD0kq9OWsGdLcBge59rl49FnCuJ+iWxEKiqFz6KXzeGH5DRVjNJA==
 
 "@types/sinon@^7.0.2":
-  version "7.0.8"
-  resolved "https://registry.yarnpkg.com/@types/sinon/-/sinon-7.0.8.tgz#7bf01f2967d0d6d2cd84ce63e08696eb076e8dc0"
-  integrity sha512-v8HKmpYANbS3y0cWji16uk/CV9v2CqpI+wxeW7WVZPU2E8MAcvBYbCBpeukhaWPRHbTO3tu8m6vb2IXWCbEUOQ==
+  version "7.0.9"
+  resolved "https://registry.yarnpkg.com/@types/sinon/-/sinon-7.0.9.tgz#981593ea396a4fb1b69e3d8ba04de0a420fd4b16"
+  integrity sha512-PS102Fj4BAa9B8C0qLp677UiW9sdI+9ZhsD6GdPbcNKNdymyKKRJ1Bsc5Uk5pQV7jTtLozTQdxzgnQx+aH8Pvg==
+
+"@types/uuid@^3.4.4":
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-3.4.4.tgz#7af69360fa65ef0decb41fd150bf4ca5c0cefdf5"
+  integrity sha512-tPIgT0GUmdJQNSHxp0X2jnpQfBSTfGxUMc/2CXBU2mnyTFVYVa2ojpoQ74w0U2yn2vw3jnC640+77lkFFpdVDw==
+  dependencies:
+    "@types/node" "*"
 
 abstract-logging@^1.0.0:
   version "1.0.0"
@@ -553,9 +560,9 @@ fast-json-stable-stringify@^2.0.0:
   integrity sha1-1RQsDK7msRifh9OnYREGT4bIu/I=
 
 fast-json-stringify@^1.11.0:
-  version "1.11.2"
-  resolved "https://registry.yarnpkg.com/fast-json-stringify/-/fast-json-stringify-1.11.2.tgz#81331e39c631f0539d5a4084ed2a01950ad56935"
-  integrity sha512-MdJdIyCvny4KrLOd+4eIgRr51LYkNvukAry4Ea1PtcYU7IOhIefBnLjZR2JM/zOOEV6iuyGulEkOLjvsNrZbQA==
+  version "1.11.3"
+  resolved "https://registry.yarnpkg.com/fast-json-stringify/-/fast-json-stringify-1.11.3.tgz#31baddf2d66d946b25b9f119c6b3953d5b235394"
+  integrity sha512-Nx9oURoGD4XYFueNkNzaameSQIcBw2HQrnsnJaRb4PFrlW3/88zusG65pzHA0P7+g5Hn7hyawG3/nCKs3NUAhQ==
   dependencies:
     ajv "^6.8.1"
     deepmerge "^3.0.0"
@@ -1028,7 +1035,7 @@ mongoose-legacy-pluralize@1.0.2:
   resolved "https://registry.yarnpkg.com/mongoose-legacy-pluralize/-/mongoose-legacy-pluralize-1.0.2.tgz#3ba9f91fa507b5186d399fb40854bff18fb563e4"
   integrity sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
 
-mongoose@^5.4.1:
+mongoose@^5.4.17:
   version "5.4.17"
   resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.4.17.tgz#354c4fef04ea7a3d10ddbd0dd9cb4a40d9d135b8"
   integrity sha512-9aAg8M0YUmGHQRDYvsKJ02wx/Qaof1Jn2iDH21ZtWGAZpQt9uVLNEOdcBuzi+lPJwGbLYh2dphdKX0sZ+dXAJQ==
@@ -1513,6 +1520,11 @@ util-deprecate@^1.0.1, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
+
+uuid@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
+  integrity sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==
 
 winston-transport@^4.3.0:
   version "4.3.0"

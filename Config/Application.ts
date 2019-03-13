@@ -41,7 +41,7 @@ class Application {
       resolve(this.configuration);
     });
 
-    void this.container.register<IApplicationConfiguration>(
+    await this.container.register<IApplicationConfiguration>(
       IApplicationConfiguration,
       promisedConfig
     );

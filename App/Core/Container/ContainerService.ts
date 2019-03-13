@@ -24,7 +24,7 @@ class ContainerService implements IContainerService {
         (this.retryCounter[serviceIdentifierInString] || 0) + 1;
 
       if (this.retryCounter[serviceIdentifierInString] >= ContainerService.RETRY_LIMIT) {
-        throw new Error('Cannot find in the registry');
+        throw new Error(`Cannot find in the registry name: ${serviceIdentifierInString}`);
       }
 
       return this.get<T>(serviceIdentifier);

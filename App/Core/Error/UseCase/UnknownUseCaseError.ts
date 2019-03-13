@@ -1,7 +1,7 @@
 import { HttpInternalServerError } from '../../HttpServer/Type/Error/HttpInternalServerError';
 
-class UnknownOperationError extends HttpInternalServerError {
-  public readonly name = 'UnknownOperationError';
+class UnknownUseCaseError extends HttpInternalServerError {
+  public name = 'UnknownUseCaseError';
 
   private readonly originalError: Error;
 
@@ -15,4 +15,4 @@ class UnknownOperationError extends HttpInternalServerError {
   }
 }
 
-export { UnknownOperationError };
+export { UnknownUseCaseError };

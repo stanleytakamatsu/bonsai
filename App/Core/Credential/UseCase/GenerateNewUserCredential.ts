@@ -11,7 +11,7 @@ class GenerateNewUserCredential implements IGenerateNewUserCredential {
   public async execute(command: IGenerateNewCredential): Promise<Credential> {
     const hashCommand = CreateNewHash.create(command.Email, command.Password);
     const hash = await this.hashDriver.createNewHash(hashCommand);
-    const credential = Credential.create(command.Password, hash.Salt, hash.Value);
+    const credential = Credential.create(command.Email, hash.Salt, hash.Value);
 
     return credential;
   }
