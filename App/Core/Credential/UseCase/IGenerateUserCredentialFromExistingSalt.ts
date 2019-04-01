@@ -1,8 +1,8 @@
 import { Credential } from '../Entity/Credential';
-import { IGenerateNewCredential } from '../Type/Command/UseCase/IGenerateNewCredential';
+import { IGenerateCredential } from '../Type/Command/UseCase/IGenerateCredential';
 
 interface IGenerateUserCredentialFromExistingSalt {
-  execute(command: IGenerateNewCredential): Promise<Credential>;
+  execute(command: IGenerateCredential): Promise<Credential>;
 }
 
 const IGenerateUserCredentialFromExistingSalt = Symbol.for(

@@ -10,8 +10,8 @@ class GenerateUserCredentialFromExistingSalt implements IGenerateUserCredentialF
 
   public async execute(command: IGenerateCredential): Promise<Credential> {
     const hashCommand = CreateHash.create(command.Email, command.Password, command.Salt);
-    const hash = await this.hashDriver.createNewHash(hashCommand);
-    const credential = Credential.create(command.Password, hash.Salt, hash.Value);
+    const hash = await this.hashDriver.createHash(hashCommand);
+    const credential = Credential.create(command.Email, hash.Salt, hash.Value);
 
     return credential;
   }
