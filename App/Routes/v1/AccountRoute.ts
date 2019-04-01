@@ -1,3 +1,4 @@
+import { ISignInController } from '../../Account/Controller/ISignInController';
 import { ISignUpController } from '../../Account/Controller/ISignUpController';
 import { IContainerService } from '../../Core/Container/IContainerService';
 import { IHttpServer } from '../../Core/HttpServer/IHttpServer';
@@ -11,6 +12,7 @@ class AccountRoute extends Api {
 
   public async register(): Promise<void> {
     await this.registerSignUpRoute();
+    await this.registerSignInRoute();
   }
 
   private async registerSignUpRoute(): Promise<void> {
@@ -20,6 +22,17 @@ class AccountRoute extends Api {
       controller,
       methods: 'POST',
       path: '/accounts',
+      version: AccountRoute.VERSION
+    });
+  }
+
+  private async registerSignInRoute(): Promise<void> {
+    const controller = await this.getController(ISignInController);
+
+    await this.addHttpRoute({
+      controller,
+      methods: 'POST',
+      path: '/accounts/logins',
       version: AccountRoute.VERSION
     });
   }
