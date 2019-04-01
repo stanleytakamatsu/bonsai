@@ -29,7 +29,7 @@ class VerifyAuthorisationToken implements IVerifyAuthorisationToken {
       case InvalidAuthorisationTokenError:
         const tokenError = error as InvalidAuthorisationTokenError;
 
-        this.logger.warning(error.message, tokenError);
+        this.logger.warning(error.message, tokenError.OriginalError);
 
         throw new TokenUnauthorisedError();
       default:
