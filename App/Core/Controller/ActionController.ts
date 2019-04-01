@@ -1,4 +1,5 @@
 import { HttpResponseFactory } from '../HttpServer/Factory/HttpResponseFactory';
+import { IHttpBody } from '../HttpServer/IHttpBody';
 import { IHttpError } from '../HttpServer/IHttpError';
 import { IHttpRequest } from '../HttpServer/IHttpRequest';
 import { IHttpResponse } from '../HttpServer/IHttpResponse';
@@ -6,11 +7,11 @@ import { IHttpResponse } from '../HttpServer/IHttpResponse';
 import { IActionController } from './IActionController';
 
 abstract class ActionController implements IActionController {
-  protected createSuccessResponse(body: any): IHttpResponse {
+  protected createSuccessResponse(body: IHttpBody): IHttpResponse {
     return HttpResponseFactory.createSuccessResponse(body);
   }
 
-  protected createCreatedResponse(body: any): IHttpResponse {
+  protected createCreatedResponse(body: IHttpBody): IHttpResponse {
     return HttpResponseFactory.createCreatedResponse(body);
   }
 

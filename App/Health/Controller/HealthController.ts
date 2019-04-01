@@ -12,7 +12,10 @@ class HealthController extends ActionController implements IHealthController {
   public async perform(): Promise<IHttpResponse> {
     const status = this.healthStatusFactory.create();
 
-    return this.createSuccessResponse(status.toMapper());
+    return this.createSuccessResponse({
+      data: status.toMapper(),
+      message: 'Application Status'
+    });
   }
 }
 
