@@ -27,7 +27,7 @@ class SignUpController extends ActionController implements ISignUpController {
       await this.signUp.execute(command);
 
       return this.createSuccessResponse({
-        message: `User ${params.Email} created with successfully.`
+        message: `User account ${params.Email} created with successfully.`
       });
     } catch (error) {
       return this.createErrorResponse(error);
