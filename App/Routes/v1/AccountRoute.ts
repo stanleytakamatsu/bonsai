@@ -1,7 +1,7 @@
-import { ISignInController } from '../../Account/Controller/ISignInController';
-import { ISignUpController } from '../../Account/Controller/ISignUpController';
 import { IContainerService } from '../../Core/Container/IContainerService';
 import { IHttpServer } from '../../Core/HttpServer/IHttpServer';
+import { ISignInController } from '../../Domain/Account/Controller/ISignInController';
+import { ISignUpController } from '../../Domain/Account/Controller/ISignUpController';
 
 import { Api } from './Api';
 

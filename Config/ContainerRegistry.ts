@@ -1,11 +1,3 @@
-import { AccountControllerProvider } from '../App/Account/Provider/AccountControllerProvider';
-import { AccountRepositoryProvider } from '../App/Account/Provider/AccountRepositoryProvider';
-import { AccountServiceProvider } from '../App/Account/Provider/AccountServiceProvider';
-import { AccountUseCaseProvider } from '../App/Account/Provider/AccountUseCaseProvider';
-import { AccountValidatorProvider } from '../App/Account/Provider/AccountValidatorProvider';
-import { AuthorisationMiddlewareProvider } from '../App/Authorisation/Provider/AuthorisationMiddlewareProvider';
-import { AuthorisationServiceProvider } from '../App/Authorisation/Provider/AuthorisationServiceProvider';
-import { AuthorisationUseCaseProvider } from '../App/Authorisation/Provider/AuthorisationUseCaseProvider';
 import { IContainerRegistry } from '../App/Core/Container/IContainerRegistry';
 import { IContainerService } from '../App/Core/Container/IContainerService';
 import { CredentialDriverProvider } from '../App/Core/Credential/Provider/CredentialDriverProvider';
@@ -16,6 +8,14 @@ import { INewable } from '../App/Core/Interface/INewable';
 import { LoggerProvider } from '../App/Core/Logger/Provider/LoggerProvider';
 import { IProvider } from '../App/Core/Provider/IProvider';
 import { TracerProvider } from '../App/Core/Tracer/Provider/TracerProvider';
+import { AccountControllerProvider } from '../App/Domain/Account/Provider/AccountControllerProvider';
+import { AccountRepositoryProvider } from '../App/Domain/Account/Provider/AccountRepositoryProvider';
+import { AccountServiceProvider } from '../App/Domain/Account/Provider/AccountServiceProvider';
+import { AccountUseCaseProvider } from '../App/Domain/Account/Provider/AccountUseCaseProvider';
+import { AccountValidatorProvider } from '../App/Domain/Account/Provider/AccountValidatorProvider';
+import { AuthorisationMiddlewareProvider } from '../App/Domain/Authorisation/Provider/AuthorisationMiddlewareProvider';
+import { AuthorisationServiceProvider } from '../App/Domain/Authorisation/Provider/AuthorisationServiceProvider';
+import { AuthorisationUseCaseProvider } from '../App/Domain/Authorisation/Provider/AuthorisationUseCaseProvider';
 import { HealthProvider } from '../App/Health/Provider/HealthProvider';
 
 class ContainerRegistry implements IContainerRegistry {
