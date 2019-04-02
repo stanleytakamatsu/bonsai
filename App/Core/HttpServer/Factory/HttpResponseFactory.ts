@@ -1,3 +1,4 @@
+import { IHttpBody } from '../IHttpBody';
 import { IHttpError } from '../IHttpError';
 import { IHttpResponse } from '../IHttpResponse';
 import { HttpResponse } from '../Type/Dto/HttpResponse';
@@ -24,7 +25,7 @@ class HttpResponseFactory {
 
   public static readonly HTTP_UNAUTHORIZED = 401;
 
-  public static createCreatedResponse(body: any): IHttpResponse {
+  public static createCreatedResponse(body: IHttpBody): IHttpResponse {
     return new HttpResponse(HttpResponseFactory.HTTP_CREATED, body);
   }
 
