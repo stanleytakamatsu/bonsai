@@ -30,7 +30,7 @@
     "typescript": "^3.2.2"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bluebird": "^3.5.3",
     "cerialize": "^0.1.18",
     "commander": "^2.19.0",
