@@ -44,7 +44,7 @@
     "jsonwebtoken": "^8.4.0",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
-    "moment-timezone": "^0.5.23",
+    "moment-timezone": "^0.5.35",
     "mongoose": "^5.4.17",
     "qs": "^6.6.0",
     "reflect-metadata": "^0.1.12",
